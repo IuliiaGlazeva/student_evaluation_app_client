@@ -33,6 +33,7 @@ class BatchesList extends PureComponent {
                 <li className="startDate">{batch.startDate}</li>
                 <li className="endDate">{batch.endDate}</li>
               </ul>
+              <Button
             </div>
           )}
           <div className="createBatch">

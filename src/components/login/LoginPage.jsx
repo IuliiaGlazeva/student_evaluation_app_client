@@ -10,12 +10,12 @@ class LoginPage extends PureComponent {
 	}
 
 	render() {
-		if (this.props.currentUser) return (
-			<Redirect to="/" />
+		if (this.props.user) return (
+			<Redirect to='/allBatches'/>
 		)
 
 		return (
-			<div>
+			<div className='LoginPage'>
 				<h1>Login</h1>
 
 				<LoginForm onSubmit={this.handleSubmit} />
@@ -28,7 +28,7 @@ class LoginPage extends PureComponent {
 
 const mapStateToProps = function (state) {
 	return {
-		currentUser: state.currentUser,
+		user: state.login.user,
     error: state.login.error
 	}
 }
