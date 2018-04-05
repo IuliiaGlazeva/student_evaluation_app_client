@@ -6,7 +6,7 @@ import Button from 'material-ui/Button'
 import {withRouter} from 'react-router'
 import Typography from 'material-ui/Typography'
 import Paper from 'material-ui/Paper'
-
+import {Link} from 'react-router-dom'
 
 class BatchesList extends PureComponent {
   componentWillMount() {
@@ -33,11 +33,12 @@ class BatchesList extends PureComponent {
                 <li className="startDate">{batch.startDate}</li>
                 <li className="endDate">{batch.endDate}</li>
               </ul>
-              <Button
+              <Link to={`/allStudents/${batch.id}`}>Show all Students</Link>
+
             </div>
           )}
           <div className="createBatch">
-
+          <button onClick={_=>window.location.href=`/createBatch`} className='add-button'>Create new Batch</button>
           </div>
 
     </div>

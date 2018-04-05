@@ -1,9 +1,12 @@
 import batches from './batches'
 import login from './login'
-//import currentUser from './currentUser'
+import students from './students'
+//import currentTeacher from './currentUser'
 
 export default {
   batches,
-  login
+  login,
+  students
+  //currentTeacher
 
 }

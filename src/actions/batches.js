@@ -1,8 +1,9 @@
 import * as request from 'superagent'
 import {baseUrl} from '../constants'
+//import {sessionStorageJwtKey} from '../constants'
 
+export const CREATE_BATCH = 'CREATE_BATCH'
 export const SHOW_BATCHES = 'SHOW_BATCHES'
-export const ADD_BATCH = 'ADD_BATCH'
 
 
 
@@ -20,66 +21,19 @@ export const getBatches = () => (dispatch, getState) => {console.log("hello!")
     .catch(err => console.error(err))
 }
 
-
-/*export const joinGame = (gameId) => (dispatch, getState) => {
+export const createBatch = (batch) => (dispatch, getState) => {
   const state = getState()
-  const jwt = state.currentUser.jwt
 
+
+  console.log(batch)
   request
-    .post(`${baseUrl}/games/${gameId}/players`)
-    .set('Authorization', `Bearer ${jwt}`)
+    .post(`${baseUrl}/createBatch`)
+    .send(batch)
     .then(result => {
       dispatch({
-        type: JOIN_GAME_SUCCESS
-      })
-    })
-    .catch(err => console.error(err))
-}*/
-
-/*export const createGame = () => (dispatch, getState) => {
-  const state = getState()
-  const jwt = state.currentUser.jwt
-
-  request
-    .post(`${baseUrl}/games`)
-    .set('Authorization', `Bearer ${jwt}`)
-    .then(result => {
-      dispatch({
-        type: ADD_GAME,
+        type: CREATE_BATCH,
         payload: result.body
       })
     })
     .catch(err => console.error(err))
 }
-
-export const updateGame = (gameId, board) => (dispatch, getState) => {
-  const state = getState()
-  const jwt = state.currentUser.jwt
-
-  request
-    .patch(`${baseUrl}/games/${gameId}`)
-    .set('Authorization', `Bearer ${jwt}`)
-    .send({board})
-    .then(result => {
-      dispatch({
-        type: UPDATE_GAME_SUCCESS
-      })
-    })
-    .catch(err => console.error(err))
-}
-
-export const updateGamen = (gameId, answer) => (dispatch, getState) => {
-  const state = getState()
-  const jwt = state.currentUser.jwt
-
-  request
-    .patch(`${baseUrl}/games/${gameId}`)
-    .set('Authorization', `Bearer ${jwt}`)
-    .send({answer})
-    .then(result => {
-      dispatch({
-        type: UPDATE_GAME_SUCCESS
-      })
-    })
-    .catch(err => console.error(err))
-}*/
