@@ -14,7 +14,6 @@ class BatchesList extends PureComponent {
     }
 
   render() {
-    const initialValues = this.props.initialValues || {}
     const batches = this.props.batches
     //if (!batches) return null
 
@@ -33,7 +32,7 @@ class BatchesList extends PureComponent {
                 <li className="startDate">{batch.startDate}</li>
                 <li className="endDate">{batch.endDate}</li>
               </ul>
-              <Link to={`/allStudents/${batch.id}`}>Show all Students</Link>
+              <Link to={`/allStudents`}>Show all Students</Link>
 
             </div>
           )}

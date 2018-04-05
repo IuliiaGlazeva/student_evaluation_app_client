@@ -5,6 +5,7 @@ import BatchesList from './components/games/AllBatchesPage'
 import LogoutPage from './components/logout/LogoutPage'
 import BatchCreatorPage from './components/games/BatchCreatorPage'
 import StudentsList from './components/games/AllStudentsPage'
+import OneStudent from './components/games/Student'
 
 import './App.css'
 import TopBar from './components/layout/TopBar'
@@ -20,9 +21,9 @@ class App extends Component {
           <Route exact path="/logins" component={LoginPage} />
           <Route exact path="/logout" component={LogoutPage} />
           <Route exact path="/allBatches" component={BatchesList} />
-          <Route exact path="/allBatches/${id}/allStudents" component={StudentsList} />
+          <Route exact path="/allStudents" component={StudentsList} />
+          <Route exact path="/allStudents/:id([0-9]+)" component={OneStudent} />
           <Route exact path="/createBatch" component={BatchCreatorPage} />
-          <Route exact path="/allBatches/${id}/allStudents" component={StudentsList} />
           <Route exact path="/" render={ () => <Redirect to="/allBatches" /> } />
         </div>
       </Router>
