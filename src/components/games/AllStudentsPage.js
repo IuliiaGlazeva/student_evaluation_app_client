@@ -8,7 +8,7 @@ import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {getStudents} from '../../actions/students'
-
+import './allStudents.css'
 
 
  class StudentsList extends PureComponent {
@@ -21,21 +21,23 @@ import {getStudents} from '../../actions/students'
 
         return (
           <div className="listOfStudents">
-            <h2>All Students</h2>
             {
               students.map(student =>
-                  <div>
+                  <div className="outer-paper">
                     <h1>
                       {student.full_name}
                     </h1>
-                    <ul>
-                      <li><div>{student.id}</div></li>
-                      <li className="students">{student.url}</li>
-                    </ul>
+
+                      <div className="block">{student.id}</div>
+                      <div className="block">{student.url}</div>
+
                     <Link to={`/allStudents/${student.id}`}>Show Student</Link>
 
                   </div>
                 )}
+                <div className="createSt">
+                <button onClick={_=>window.location.href=`/createStudent`} className='add-button'>Create new Student</button>
+                </div>
           </div>
         )
     }

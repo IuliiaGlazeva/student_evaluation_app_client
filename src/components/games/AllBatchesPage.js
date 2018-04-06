@@ -7,6 +7,7 @@ import {withRouter} from 'react-router'
 import Typography from 'material-ui/Typography'
 import Paper from 'material-ui/Paper'
 import {Link} from 'react-router-dom'
+import './AllBatches.css'
 
 class BatchesList extends PureComponent {
   componentWillMount() {
@@ -19,21 +20,16 @@ class BatchesList extends PureComponent {
 
     return (
       <div className="listOfBatches">
-      <h2>All Batches</h2>
+      <h3 className="header">All Batches</h3>
       {
         batches.map(batch =>
-            <div>
-              <h1>
-                {batch.titleOfBatch}
-              </h1>
-              <ul>
-                <li><div>{batch.id}</div></li>
-                <li className="students">{batch.student.length}</li>
-                <li className="startDate">{batch.startDate}</li>
-                <li className="endDate">{batch.endDate}</li>
-              </ul>
+            <div class="outer-paper">
+                <div className="block">Batch #{batch.id}</div>
+                <div className="block">{batch.titleOfBatch}</div>
+                <div className="block">{batch.student.length} Students</div>
+                <div className="block">{batch.startDate}</div>
+                <div className="block">{batch.endDate}</div>
               <Link to={`/allStudents`}>Show all Students</Link>
-
             </div>
           )}
           <div className="createBatch">

@@ -34,3 +34,18 @@ export const getStudent = (id) => (dispatch, getState) => {console.log("hello!")
     })
     .catch(err => console.error(err))
 }
+export const createStudent = (student) => (dispatch, getState) => {
+  const state = getState()
+
+  console.log(student)
+  request
+    .post(`${baseUrl}/createStudent`)
+    .send(student)
+    .then(result => {
+      dispatch({
+        type: CREATE_STUDENT,
+        payload: result.body
+      })
+    })
+    .catch(err => console.error(err))
+}

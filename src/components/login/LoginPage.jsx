@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {login} from '../../actions/users'
 import LoginForm from './LoginForm'
 import {Redirect} from 'react-router-dom'
+import './LoginForm.css'
 
 class LoginPage extends PureComponent {
 	handleSubmit = (data) => {
@@ -16,9 +17,8 @@ class LoginPage extends PureComponent {
 
 		return (
 			<div className='LoginPage'>
-				<h1>Login</h1>
 
-				<LoginForm onSubmit={this.handleSubmit} />
+				<LoginForm class="loginForm" onSubmit={this.handleSubmit} />
 
         { this.props.error && <span style={{color:'red'}}>{this.props.error}</span> }
 			</div>

@@ -44,7 +44,8 @@ export default class BatchCreatorForm extends PureComponent {
 
 
 
-				<button type="submit">Create new Batch</button>
+				<button onClick={_=>window.location.href=`/allBatches`}
+type="submit">Create new Batch</button>
 			</form>
 		)
 	}

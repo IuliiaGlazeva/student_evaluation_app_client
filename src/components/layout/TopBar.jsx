@@ -30,27 +30,32 @@ function ButtonAppBar(props) {
       <AppBar position="static">
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-            <MenuIcon />
+
           </IconButton>
           <Typography variant="title" color="inherit" className={classes.flex}>
-            Guess the song game
+            Student Evaluations
           </Typography>
           {
-            location.pathname.indexOf('signup') > 0 &&
+            location.pathname.indexOf('') > 0 &&
             <Button color="inherit" onClick={() => history.push('/login')}>Login</Button>
           }
           {
             location.pathname.indexOf('login') > 0 &&
-            <Button color="inherit" onClick={() => history.push('/signup')}>Sign up</Button>
+            <Button color="inherit" onClick={() => history.push('/allBatches')}>login</Button>
           }
           {
             location.pathname.indexOf('allBatches/') > 0 &&
             <Button color="inherit" onClick={() => history.push('/allBatches')}>All Batches</Button>
           }
           {
+            location.pathname.indexOf('allStudents/') > 0 &&
+            <Button color="inherit" onClick={() => history.push('/allStudents')}>All Batches</Button>
+          }
+          {
             /allBatches$/.test(location.pathname) &&
             <Button color="inherit" onClick={() => history.push('/logout')}>Log out</Button>
           }
+
         </Toolbar>
       </AppBar>
     </div>

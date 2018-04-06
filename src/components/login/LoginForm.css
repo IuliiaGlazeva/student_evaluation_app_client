@@ -1,0 +1,36 @@
+.loginForm {
+  margin: 15px;
+  width: 40%;
+  height: 40%;
+  position: relative;
+  padding: 5px;
+  border-style: inset;
+  text-align: center;
+  left: 22%;
+}
+.input {
+  width: 330px;
+  height: 40px;
+  padding: 4px;
+  margin: 3px;
+  position: relative;
+}
+#email {
+position: relative;
+left: 16px;
+}
+
+.button {
+    background: -moz-linear-gradient(#d31037, #EBFFFF);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#d31037), to(#EBFFFF));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BBD6', endColorstr='#EBFFFF');
+    padding: 3px 7px;
+    color: #333;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #666;
+    width: 80px;
+    position: relative;
+    left: 140px;
+   }
