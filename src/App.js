@@ -22,7 +22,7 @@ class App extends Component {
           <Route exact path="/logins" component={LoginPage} />
           <Route exact path="/logout" component={LogoutPage} />
           <Route exact path="/allBatches" component={BatchesList} />
-          <Route exact path="/allStudents" component={StudentsList} />
+          <Route exact path="/allBatches/:id([0-9]+)/allStudents" component={StudentsList} />
           <Route exact path="/createStudent" component={StudentCreatorPage} />
           <Route exact path="/allStudents/:id([0-9]+)" component={OneStudent} />
           <Route exact path="/createBatch" component={BatchCreatorPage} />

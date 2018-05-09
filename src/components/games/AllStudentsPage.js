@@ -1,20 +1,21 @@
-import {Redirect} from 'react-router-dom'
-import Button from 'material-ui/Button'
-import {withRouter} from 'react-router'
-import Typography from 'material-ui/Typography'
-import Paper from 'material-ui/Paper'
-import {Link} from 'react-router-dom'
 import React, {PureComponent} from 'react'
-import PropTypes from 'prop-types'
-import {connect} from 'react-redux'
 import {getStudents} from '../../actions/students'
-import './allStudents.css'
+import { connect } from 'react-redux'
+import { createStudent, pickRandomStudent } from '../../actions/students'
+import {Link} from 'react-router-dom'
+import {withRouter} from 'react-router'
+//import { RandomStudent } from '../lib/randomfanc'
 
 
- class StudentsList extends PureComponent {
+class StudentsList extends PureComponent {
   componentWillMount() {
       this.props.getStudents(this.props.match.params.id)
     }
+
+    //handleClick = () => {
+    ////  pickRandomStudent(this.props.students)
+      //}
+
 
       render() {
         const {students} = this.props
@@ -24,32 +25,33 @@ import './allStudents.css'
             {
               students.map(student =>
                   <div className="outer-paper">
-                    <h1>
-                      {student.full_name}
-                    </h1>
-
-                      <div className="block">{student.id}</div>
+                      <div className="block">{student.full_name}</div>
                       <div className="block">{student.url}</div>
 
-                    <Link to={`/allStudents/${student.id}`}>Show Student</Link>
+                      <Link to={`/allStudents/${student.id}`}>Show Student</Link>
 
                   </div>
                 )}
-                <div className="createSt">
-                <button onClick={_=>window.location.href=`/createStudent`} className='add-button'>Create new Student</button>
-                </div>
+                  <div className="createSt">
+                  <button onClick={_=>window.location.href=`/createStudent`} className='add-button'>Create new Student</button>
+                  </div>
+
           </div>
         )
     }
-}
+  }
+
+
 
 
 const mapStateToProps = function (state) {
 	return {
 		students: state.students
+    //randomStudent: state.randomStudent
+
 	}
 }
 
 export default withRouter (
-  connect(mapStateToProps, {getStudents})(StudentsList)
+  connect(mapStateToProps, {getStudents, /*pickRandomStudent*/})(StudentsList)
 )

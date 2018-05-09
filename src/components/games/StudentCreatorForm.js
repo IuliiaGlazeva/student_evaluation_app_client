@@ -1,6 +1,6 @@
-import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
+import React, {PureComponent} from 'react'
 
 export default class StudentCreatorForm extends PureComponent {
   state = {}
@@ -37,7 +37,7 @@ export default class StudentCreatorForm extends PureComponent {
 
 				<button
           type="submit">Add Student</button>
-        <button onClick={_=>window.location.href=`/allStudents`}
+        <button onClick={_=>window.location.href=`/allBatches/allStudents`}
             type="submit">All Students</button>
 			</form>
 		)

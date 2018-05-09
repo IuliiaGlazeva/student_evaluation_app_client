@@ -26,10 +26,10 @@ class BatchesList extends PureComponent {
             <div class="outer-paper">
                 <div className="block">Batch #{batch.id}</div>
                 <div className="block">{batch.titleOfBatch}</div>
-                <div className="block">{batch.student.length} Students</div>
+                <div className="block">{batch.students.length} Students</div>
                 <div className="block">{batch.startDate}</div>
                 <div className="block">{batch.endDate}</div>
-              <Link to={`/allStudents`}>Show all Students</Link>
+              <Link to={`./allBatches/${batch.id}/allStudents`}>Show all Students in this Batch</Link>
             </div>
           )}
           <div className="createBatch">

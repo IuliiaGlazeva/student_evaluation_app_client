@@ -10,9 +10,7 @@ class StudentCreatorPage extends PureComponent {
 	}
 
 	render() {
-		//if (this.props.signup.success) return (
-			///<Redirect to="/" />
-		//)
+		
     const { history } = this.props
 		return (
 			<div>
